@@ -1,4 +1,5 @@
 src/example/
+.idea/
 ### Java template
 # Compiled class file
 *.class
