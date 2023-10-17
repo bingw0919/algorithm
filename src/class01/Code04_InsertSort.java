@@ -23,7 +23,6 @@ public class Code04_InsertSort {
 
     /**
      * 插入排序
-     *
      * @param arr 数组
      */
     public static void sort(int[] arr) {
