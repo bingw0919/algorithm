@@ -7,7 +7,7 @@ import java.util.Arrays;
  */
 public class Code01_PreSum {
     /**
-     * 多次获取数组中l->r的求和
+     * 多次获取数组中l->r的求和a
      *
      * @param arr 数组
      * @return 二维数组保存l->r的求和取值
