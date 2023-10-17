@@ -1,9 +1,8 @@
 package class01;
 
-import java.util.Arrays;
 import java.util.Random;
 
-public class Code02_SelectionSort {
+public class Code03_BubbleSort {
     /**
      * 打印数组
      *
@@ -23,24 +22,22 @@ public class Code02_SelectionSort {
     }
 
     /**
-     * 选择排序
+     * 冒泡排序
      *
      * @param arr 数组
      */
     public static void sort(int[] arr) {
         if (arr == null || arr.length < 2) return;
-        for (int i = 0; i < arr.length; i++) {
-            int min = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[j] < arr[min]) min = j;
+        for (int i = arr.length - 1; i >= 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (arr[j] > arr[j + 1]) swap(arr, j, j + 1);
             }
-            swap(arr, i, min);
         }
     }
 
     public static void main(String[] args) {
         Random random = new Random();
-        int[] arr = new int[10];
+        int[] arr = new int[15];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = random.nextInt(100);
         }

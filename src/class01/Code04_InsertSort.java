@@ -2,7 +2,7 @@ package class01;
 
 import java.util.Random;
 
-public class Code03_BubbleSort {
+public class Code04_InsertSort {
     /**
      * 打印数组
      *
@@ -22,15 +22,16 @@ public class Code03_BubbleSort {
     }
 
     /**
-     * 冒泡排序
+     * 插入排序
      *
      * @param arr 数组
      */
     public static void sort(int[] arr) {
         if (arr == null || arr.length < 2) return;
-        for (int i = arr.length - 1; i >= 0; i--) {
-            for (int j = 0; j < i; j++) {
-                if (arr[j] > arr[j + 1]) swap(arr, j, j + 1);
+        //对前i个数排序
+        for (int i = 1; i < arr.length; i++) {
+            for (int j = i - 1; j >= 0 && arr[j] > arr[j + 1];j--) {
+                swap(arr, j, j + 1);
             }
         }
     }
