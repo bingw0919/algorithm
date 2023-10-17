@@ -1,2 +1,4 @@
-package class01;public class Code01_PrintBinary {
+package class01;
+
+public class Code01_PrintBinary {
 }
