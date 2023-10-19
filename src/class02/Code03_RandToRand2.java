@@ -1,55 +1,40 @@
 package class02;
 
 /**
- * 利用能生成1-5的随机数函数生成1-7的等概率随机数
+ * 利用生成不等概率的两个数的函数获取等概率的两个数
  */
-public class Code02_RandToRand1 {
+public class Code03_RandToRand2 {
     public static void main(String[] args) {
-        int[] arr=new int[7];
+        int[] arr=new int[2];
         for (int i = 0; i < 100000; i++) {
-            int f4 = f4();
-            arr[f4-1]++;
+            int num = y();
+            arr[num]++;
         }
         for (int j : arr) {
             System.out.println(j);
         }
-        for (int i = 0; i < 100000; i++) {
-            System.out.println(f2());
-        }
     }
 
     /**
-     * 题目提供生成1-5的等概率随机数
-     *
-     * @return 返回1~5
-     */
-    public static int f2() {
-        return (int) (Math.random() * 5) + 1;
-    }
-
-    /**
-     * 生成0-1等概率的随机数
+     * 获取不等概率的两个数
      *
      * @return 0，1
      */
-    public static int f3() {
-        int num;
-        do {
-            num = f2();
-        } while (num == 5);
-        return num <= 2 ? 0 : 1;
+    public static int x() {
+        return Math.random() < 0.84 ? 0 : 1;
     }
 
     /**
-     * 生成1-7的等概率随机数
-     * @return 1~7
+     * 等概率返回0，1
+     *
+     * @return 0，1
      */
-    public static int f4() {
+    public static int y() {
         int num;
         do {
-            //生成0-7的随机数
-            num = (f3() << 2) + (f3() << 1) + (f3());
-        } while (num == 0);//排除随机数0
+            num = x();
+        } while (num == x());
         return num;
     }
+
 }
