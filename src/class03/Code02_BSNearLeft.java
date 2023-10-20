@@ -15,8 +15,8 @@ public class Code02_BSNearLeft {
             if (arr[mid] <= num) {
                 L = mid + 1;
             } else {
-                R = mid - 1;
                 ans = mid;
+                R = mid - 1;
             }
         }
         return ans;
