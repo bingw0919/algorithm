@@ -1,12 +1,10 @@
 package class04;
 
 
-import example.class04.Code01_ReverseList;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReverseSingleList {
+public class Code01_ReverseSingleList {
     public static class Node {
         public int value;
         public Node next;
