@@ -1,4 +1,4 @@
-package class01;
+package zuochengyun_new.class01;
 
 public class Code01_PrintBinary {
     public static void print(int num) {

@@ -1,4 +1,4 @@
-package class02;
+package zuochengyun_new.class02;
 
 /**
  * 利用能生成1-5的随机数函数生成1-7的等概率随机数

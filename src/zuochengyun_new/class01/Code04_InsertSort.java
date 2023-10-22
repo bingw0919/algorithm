@@ -1,4 +1,4 @@
-package class01;
+package zuochengyun_new.class01;
 
 import java.util.Random;
 

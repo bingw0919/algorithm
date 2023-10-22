@@ -1,4 +1,4 @@
-package class03;
+package zuochengyun_new.class03;
 
 public class Code02_BSNearLeft {
     /**

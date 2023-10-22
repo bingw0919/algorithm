@@ -1,4 +1,4 @@
-package class02;
+package zuochengyun_new.class02;
 
 /**
  * 利用生成不等概率的两个数的函数获取等概率的两个数

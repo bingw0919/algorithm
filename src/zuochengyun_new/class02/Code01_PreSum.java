@@ -1,4 +1,4 @@
-package class02;
+package zuochengyun_new.class02;
 
 import java.util.Arrays;
 

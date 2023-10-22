@@ -1,4 +1,4 @@
-package class04;
+package zuochengyun_new.class04;
 
 import java.util.LinkedList;
 import java.util.Queue;
