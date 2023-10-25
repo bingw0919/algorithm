@@ -1,4 +1,4 @@
-package p3;
+package zuochengyun_bilibili.p3;
 
 
 public class Code03_OddTimes {

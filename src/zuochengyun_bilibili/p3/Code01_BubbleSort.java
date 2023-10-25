@@ -1,34 +1,34 @@
-package p3;
+package zuochengyun_bilibili.p3;
 
 import java.util.Random;
 
-public class Code05_InsertSort {
+public class Code01_BubbleSort {
     public static void main(String[] args) {
-        int[] arr = new int[10];
+        int[] arr=new int[10];
         Random random = new Random();
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = random.nextInt(100);
+            arr[i]= random.nextInt(100);
         }
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+            System.out.print(arr[i]+" ");
         }
         System.out.println();
         sort(arr);
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+            System.out.print(arr[i]+" ");
         }
     }
 
     /**
-     * 插入排序
+     * 冒泡排序
      *
      * @param arr 数组
      */
     public static void sort(int[] arr) {
-        if (arr == null || arr.length < 2) return;
-        for (int i = 1; i < arr.length; i++) {//对0~i近进行排序
-            for (int j = i - 1; j >= 0 && arr[j] > arr[j + 1]; j--) {//前i-1个数据有序，寻找第i个数合适的插入位置
-                swap(arr, j, j + 1);
+        for (int i = arr.length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (arr[j] > arr[j + 1])
+                    swap(arr,j,j+1);
             }
         }
     }

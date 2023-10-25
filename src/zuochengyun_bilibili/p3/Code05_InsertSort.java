@@ -1,8 +1,8 @@
-package p3;
+package zuochengyun_bilibili.p3;
 
 import java.util.Random;
 
-public class Code02_SelectionSort {
+public class Code05_InsertSort {
     public static void main(String[] args) {
         int[] arr = new int[10];
         Random random = new Random();
@@ -20,19 +20,16 @@ public class Code02_SelectionSort {
     }
 
     /**
-     * 选择排序
+     * 插入排序
      *
      * @param arr 数组
      */
     public static void sort(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            int minIndex = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[minIndex] > arr[j]) {
-                    minIndex = j;
-                }
+        if (arr == null || arr.length < 2) return;
+        for (int i = 1; i < arr.length; i++) {//对0~i近进行排序
+            for (int j = i - 1; j >= 0 && arr[j] > arr[j + 1]; j--) {//前i-1个数据有序，寻找第i个数合适的插入位置
+                swap(arr, j, j + 1);
             }
-            swap(arr, minIndex, i);
         }
     }
 
