@@ -20,8 +20,8 @@ public class Code03_BitMinus {
         for (int i = 0; i < 100000; i++) {
             int a = (int) (Math.random() * 1000);
             int b = (int) (Math.random() * 1000);
-            if (a + b != add(a, b)) {
-                System.out.println("add(a-b)=" + minus(a, b));
+            if (a - b != minus(a, b)) {
+                System.out.println("minus(a,b)=" + minus(a, b));
                 System.out.println("a-b=" + (a - b));
             }
         }
