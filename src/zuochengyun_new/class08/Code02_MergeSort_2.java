@@ -1,6 +1,6 @@
 package zuochengyun_new.class08;
 
-public class Code01_MergeSort_2 {
+public class Code02_MergeSort_2 {
 
     // 递归方法实现
     public static void mergeSort(int[] arr) {
