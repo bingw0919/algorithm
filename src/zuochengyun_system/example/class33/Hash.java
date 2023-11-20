@@ -4,8 +4,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.Security;
 
-import javax.xml.bind.DatatypeConverter;
-
 public class Hash {
 
 	private MessageDigest hash;
@@ -16,10 +14,6 @@ public class Hash {
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
 		}
-	}
-
-	public String hashCode(String input) {
-		return DatatypeConverter.printHexBinary(hash.digest(input.getBytes())).toUpperCase();
 	}
 
 	public static void main(String[] args) {
@@ -37,12 +31,6 @@ public class Hash {
 		String input3 = "zuochengyunzuochengyun3";
 		String input4 = "zuochengyunzuochengyun4";
 		String input5 = "zuochengyunzuochengyun5";
-		System.out.println(hash.hashCode(input1));
-		System.out.println(hash.hashCode(input2));
-		System.out.println(hash.hashCode(input3));
-		System.out.println(hash.hashCode(input4));
-		System.out.println(hash.hashCode(input5));
-
 	}
 
 }
