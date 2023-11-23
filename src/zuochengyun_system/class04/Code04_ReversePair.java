@@ -1,35 +1,32 @@
 package zuochengyun_system.class04;
 
 public class Code04_ReversePair {
-    public static int res = 0;
 
     public static int reverPairNumber(int[] arr) {
         if (arr == null || arr.length < 2) {
             return 0;
         }
-        process(arr, 0, arr.length - 1);
-        return res;
+        return process(arr, 0, arr.length - 1);
     }
 
-    private static void process(int[] arr, int L, int R) {
-        if (L >= R) return;
+    private static int process(int[] arr, int L, int R) {
+        if (L >= R) return 0;
         int mid = L + ((R - L) >> 1);
-        process(arr, L, mid);
-        process(arr, mid + 1, R);
-        merge(arr, L, mid, R);
+        return process(arr, L, mid) +
+                process(arr, mid + 1, R) +
+                merge(arr, L, mid, R);
     }
 
-    private static void merge(int[] arr, int L, int M, int R) {
-
-        int cur1 = L, cur2 = M + 1, tmpCur = 0;
+    private static int merge(int[] arr, int L, int M, int R) {
+        int cur1 = L, cur2 = M + 1, tmpCur = 0, ans = 0;
         int[] tmp = new int[R - L + 1];
         while (cur1 <= M && cur2 <= R) {
             //寻找右侧最后一个小于左侧的数
             while (cur2 <= R && arr[cur2] < arr[cur1]) cur2++;
-            res += (cur2 - M - 1);
+            ans += (cur2 - M - 1);
             cur1++;
         }
-        if (cur1 <= M) res += (M - cur1 + 1) * (cur2 - M - 1);
+        if (cur1 <= M) ans += (M - cur1 + 1) * (cur2 - M - 1);
         cur1 = L;
         cur2 = M + 1;
         while (cur1 <= M && cur2 <= R) {
@@ -48,24 +45,30 @@ public class Code04_ReversePair {
         for (int i = 0; i < tmp.length; i++) {
             arr[L + i] = tmp[i];
         }
+        return ans;
     }
 
-//=================example code start ===========================================================
+    //=================example code start ===========================================================
     public static int reverPairNumber1(int[] arr) {
         if (arr == null || arr.length < 2) {
             return 0;
         }
-        process1(arr, 0, arr.length - 1);
-        return res;
+        return process1(arr, 0, arr.length - 1);
     }
 
-    private static void process1(int[] arr, int L, int R) {
-        if (L >= R) return;
-        int mid = L + ((R - L) >> 1);
-        process1(arr, L, mid);
-        process1(arr, mid + 1, R);
-        merge1(arr, L, mid, R);
+    // arr[L..R]既要排好序，也要求逆序对数量返回
+    // 所有merge时，产生的逆序对数量，累加，返回
+    // 左 排序 merge并产生逆序对数量
+    // 右 排序 merge并产生逆序对数量
+    public static int process1(int[] arr, int l, int r) {
+        if (l == r) {
+            return 0;
+        }
+        // l < r
+        int mid = l + ((r - l) >> 1);
+        return process1(arr, l, mid) + process1(arr, mid + 1, r) + merge1(arr, l, mid, r);
     }
+
     public static int merge1(int[] arr, int L, int m, int r) {
         int[] help = new int[r - L + 1];
         int i = help.length - 1;
@@ -156,10 +159,10 @@ public class Code04_ReversePair {
 
     // for test
     public static void main(String[] args) {
-        int testTime = 1000;
-        int maxSize =30000;
+        int testTime = 100;
+        int maxSize = 10000;
         int maxValue = 100;
-        long time1 = 0, time2 = 0,time3=0;
+        long time1 = 0, time2 = 0, time3 = 0;
         boolean succeed = true;
         for (int i = 0; i < testTime; i++) {
             int[] arr1 = generateRandomArray(maxSize, maxValue);
@@ -181,15 +184,16 @@ public class Code04_ReversePair {
             end = System.currentTimeMillis();
             time3 += end - start;
 
-            if (res1 != res2) {
+            if (res1 != res2||res1!=res3) {
                 succeed = false;
                 printArray(arr1);
                 printArray(arr2);
+                printArray(arr3);
                 System.out.println(res1);
                 System.out.println(res2);
+                System.out.println(res3);
                 break;
             }
-            res = 0;
         }
         System.out.println(succeed ? "Nice!" : "Fucking fucked!");
         System.out.println("time1=" + time1);
