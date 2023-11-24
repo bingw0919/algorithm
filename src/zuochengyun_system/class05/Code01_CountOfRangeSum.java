@@ -29,6 +29,7 @@ public class Code01_CountOfRangeSum {
         for (int i = M + 1; i <= R; i++) {
             long min = sum[i] - upper, max = sum[i] - lower;
             while (windowL <= M && sum[windowL] < min) windowL++;
+            //寻找最右侧的数
             while (windowR <= M && sum[windowR] <= max) windowR++;
             count+=windowR-windowL;
         }
