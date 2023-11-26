@@ -2,7 +2,7 @@ package zuochengyun_system.class05;
 
 import java.util.Random;
 
-public class Code02_QuickSort_2 {
+public class Code03_QuickSort_2 {
     public static void sortArray(int[] arr) {
         if (arr == null || arr.length < 2) return;
         process(arr, 0, arr.length - 1);
@@ -49,7 +49,7 @@ public class Code02_QuickSort_2 {
             if (arr[i - 1] > arr[i]) flag = true;
         }
         System.out.println(flag);
-        Code02_QuickSort_2.sortArray(arr);
+        Code03_QuickSort_2.sortArray(arr);
         for (int i = 1; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
