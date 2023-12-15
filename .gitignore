@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .idea/
 ### Java template
 # Compiled class file
@@ -25,3 +26,9 @@
 hs_err_pid*
 replay_pid*
 
+=======
+.idea
+.gitignore
+out
+algorithm.iml
+>>>>>>> zuochengyun_system
