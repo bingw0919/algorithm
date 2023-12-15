@@ -29,6 +29,10 @@ replay_pid*
 =======
 .idea
 .gitignore
+<<<<<<< HEAD
 out
 algorithm.iml
+=======
+out
+>>>>>>> 65013bbc5ab393ae60ab9d69c081f2797692b0bb
 >>>>>>> zuochengyun_system
