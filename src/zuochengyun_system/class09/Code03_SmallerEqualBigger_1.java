@@ -93,7 +93,7 @@ public class Code03_SmallerEqualBigger_1 {
             }
             cur = tmp;
         }
-        head = head1 != null ? head1 : (head2 == null ? head2 : head3);
+        head = head1 != null ? head1 : ((head2 != null) ? head2 : head3);
         if (head.equals(head1)) {
             if (head2 != null) {
                 cur1.next = head2;
@@ -118,18 +118,24 @@ public class Code03_SmallerEqualBigger_1 {
     }
 
     public static void main(String[] args) {
-        Node head1 = new Node(7);
-        head1.next = new Node(9);
-        head1.next.next = new Node(1);
-        head1.next.next.next = new Node(8);
-        head1.next.next.next.next = new Node(5);
-        head1.next.next.next.next.next = new Node(2);
-        head1.next.next.next.next.next.next = new Node(5);
+        for (int i = 0; i < 100; i++) {
+            Node head1 = new Node((int) (Math.random()*10));
+            Node cur=head1;
+            for (int j = 0; j < (int) (Math.random() * 10); j++) {
+                cur.next=new Node((int) (Math.random()*20));
+                cur=cur.next;
+                printLinkedList(head1);
+                // head1 = listPartition1(head1, 4);
+                head1 = listPartition2(head1, 10);
+                printLinkedList(head1);
+            }
+        }
+        Node head1 = new Node(9);
+        head1.next=new Node(8);
         printLinkedList(head1);
         // head1 = listPartition1(head1, 4);
         head1 = listPartition2(head1, 5);
         printLinkedList(head1);
-
     }
 
 }
