@@ -5,16 +5,8 @@ package zuochengyun_system.class10;
  * @date: 2023-12-18 10:55
  */
 //https://leetcode.cn/problems/linked-list-cycle-ii/
-public class Code01_FindLoopNode {
-    static class ListNode {
-        int val;
-        ListNode next;
+public  class Code01_FindLoopNode {
 
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
 
     public static ListNode detectCycle(ListNode head) {
         if (head == null || head.next == null || head.next.next == null) {
@@ -47,5 +39,14 @@ public class Code01_FindLoopNode {
         head.next=listNode;
         listNode.next=head;
         System.out.println(detectCycle(head).val);
+    }
+    private static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+            next = null;
+        }
     }
 }
