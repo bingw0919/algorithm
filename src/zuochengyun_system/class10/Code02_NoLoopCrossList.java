@@ -9,7 +9,7 @@ import java.util.HashSet;
 public class Code02_NoLoopCrossList {
     private class ListNode {
         int val;
-        Code01_FindLoopNode.ListNode next;
+        ListNode next;
 
         ListNode(int x) {
             val = x;
