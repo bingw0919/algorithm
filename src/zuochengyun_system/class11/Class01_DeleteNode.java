@@ -1,6 +1,6 @@
 package zuochengyun_system.class11;
 
-public class class01_deleteNode {
+public class Class01_DeleteNode {
     private class ListNode {
         int val;
         ListNode next;
